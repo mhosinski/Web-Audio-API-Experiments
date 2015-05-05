@@ -25,6 +25,7 @@ RhythmSample.play = function() {
     var time = startTime + bar * 8 * eighthNoteTime;
     // Play the bass (kick) drum on beats 1, 5
     playSound(kick, time);
+    playSound(kick, time + 3 * eighthNoteTime);
     playSound(kick, time + 4 * eighthNoteTime);
 
     // Play the snare drum on beats 3, 7
