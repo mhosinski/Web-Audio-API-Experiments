@@ -8,50 +8,26 @@
 	<meta name="description" content="Drum Machine">
 	<meta name="author" content="Mike Hosinski">
 </head>
+<script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/buffer-loader.js"></script>
+<script src="js/rhythm-sample.js"></script>
 <script src="js/init.js"></script>
+<style>
+#play {
+	width: 200px;
+	height: 50px;
+	color: white;
+	background-color: #333;
+	font-size: 19px;
+}
+</style>
 <body>
-	
-	<script>
-		var RhythmSample = {
-		};
+	<div id="play">Play</div>
 
-		RhythmSample.play = function() {
-		  function playSound(buffer, time) {
-			var source = context.createBufferSource();
-			source.buffer = buffer;
-			source.connect(context.destination);
-			if (!source.start)
-			  source.start = source.noteOn;
-			source.start(time);
-		  }
-
-		  var kick = BUFFERS.kick;
-		  var snare = BUFFERS.snare;
-		  var hihat = BUFFERS.hihat;
-
-		  // We'll start playing the rhythm 100 milliseconds from "now"
-		  var startTime = context.currentTime + 0.100;
-		  var tempo = 80; // BPM (beats per minute)
-		  var eighthNoteTime = (60 / tempo) / 2;
-
-		  // Play 2 bars of the following:
-		  for (var bar = 0; bar < 2; bar++) {
-			var time = startTime + bar * 8 * eighthNoteTime;
-			// Play the bass (kick) drum on beats 1, 5
-			playSound(kick, time);
-			playSound(kick, time + 4 * eighthNoteTime);
-
-			// Play the snare drum on beats 3, 7
-			playSound(snare, time + 2 * eighthNoteTime);
-			playSound(snare, time + 6 * eighthNoteTime);
-
-			// Play the hi-hat every eighth note.
-			for (var i = 0; i < 8; ++i) {
-			  playSound(hihat, time + i * eighthNoteTime);
-			}
-		  }
-		};	
-	</script>
+<script>
+	$('#play').on('click', function() {
+		RhythmSample.play();
+	});
+</script>
 </body>
 </html>
