@@ -13,21 +13,116 @@
 <script src="js/rhythm-sample.js"></script>
 <script src="js/init.js"></script>
 <style>
+body {
+	font-family: Calibri, Arial, sans-serif;
+}
+.drum-machine-container {
+	width: 800px;
+	height: 166px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	margin-bottom: 8px;
+}
+.drum-machine {
+	padding: 8px;
+}
+.sample-row {
+	height: 50px;
+	clear: both;
+}
+.sample-row .label {
+	width: 60px;
+	font-size: 19px;
+	float: left;
+	line-height: 50px;
+	text-align: right;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+.sample-box {
+	width: 30px;
+	height: 30px;
+	margin: 8px 4px 8px 4px;
+	border: 2px solid #bbb;
+	border-radius: 5px;
+	float: left;
+	cursor: pointer;
+}
 #play {
-	width: 200px;
+	width: 150px;
 	height: 50px;
 	color: white;
-	background-color: #333;
-	font-family: Calibri, Arial, sans-serif;
+	background-color: #999;
 	font-size: 30px;
 	text-align: center;
 	line-height: 50px;
+	border-radius: 10px;
 	cursor: pointer;
 }
 </style>
 <body>
+	<div class="drum-machine-container">
+		<div class="drum-machine">
+			<div id="sample01" class="sample-row">
+				<div class="label">Kick</div>
+				<div id="r1-c1" class="sample-box"></div>
+				<div id="r1-c2" class="sample-box"></div>
+				<div id="r1-c3" class="sample-box"></div>
+				<div id="r1-c4" class="sample-box"></div>
+				<div id="r1-c5" class="sample-box"></div>
+				<div id="r1-c6" class="sample-box"></div>
+				<div id="r1-c7" class="sample-box"></div>
+				<div id="r1-c8" class="sample-box"></div>
+				<div id="r1-c9" class="sample-box"></div>
+				<div id="r1-c10" class="sample-box"></div>
+				<div id="r1-c11" class="sample-box"></div>
+				<div id="r1-c12" class="sample-box"></div>
+				<div id="r1-c13" class="sample-box"></div>
+				<div id="r1-c14" class="sample-box"></div>
+				<div id="r1-c15" class="sample-box"></div>
+				<div id="r1-c16" class="sample-box"></div>				
+			</div>
+			<div id="sample02" class="sample-row">
+				<div class="label">Snare</div>			
+				<div id="r2-c1" class="sample-box"></div>
+				<div id="r2-c2" class="sample-box"></div>
+				<div id="r2-c3" class="sample-box"></div>
+				<div id="r2-c4" class="sample-box"></div>
+				<div id="r2-c5" class="sample-box"></div>
+				<div id="r2-c6" class="sample-box"></div>
+				<div id="r2-c7" class="sample-box"></div>
+				<div id="r2-c8" class="sample-box"></div>
+				<div id="r2-c9" class="sample-box"></div>
+				<div id="r2-c10" class="sample-box"></div>
+				<div id="r2-c11" class="sample-box"></div>
+				<div id="r2-c12" class="sample-box"></div>
+				<div id="r2-c13" class="sample-box"></div>
+				<div id="r2-c14" class="sample-box"></div>
+				<div id="r2-c15" class="sample-box"></div>
+				<div id="r2-c16" class="sample-box"></div>	
+			</div>
+			<div id="sample03" class="sample-row">
+				<div class="label">Hi-Hat</div>			
+				<div id="r3-c1" class="sample-box"></div>
+				<div id="r3-c2" class="sample-box"></div>
+				<div id="r3-c3" class="sample-box"></div>
+				<div id="r3-c4" class="sample-box"></div>
+				<div id="r3-c5" class="sample-box"></div>
+				<div id="r3-c6" class="sample-box"></div>
+				<div id="r3-c7" class="sample-box"></div>
+				<div id="r3-c8" class="sample-box"></div>
+				<div id="r3-c9" class="sample-box"></div>
+				<div id="r3-c10" class="sample-box"></div>
+				<div id="r3-c11" class="sample-box"></div>
+				<div id="r3-c12" class="sample-box"></div>
+				<div id="r3-c13" class="sample-box"></div>
+				<div id="r3-c14" class="sample-box"></div>
+				<div id="r3-c15" class="sample-box"></div>
+				<div id="r3-c16" class="sample-box"></div>	
+			</div>
+		</div>
+	</div>
 	<div id="play">Play</div>
-
 <script>
 	$('#play').on('click', function() {
 		RhythmSample.play();
