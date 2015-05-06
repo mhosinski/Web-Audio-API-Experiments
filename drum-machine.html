@@ -17,11 +17,12 @@ body {
 	font-family: Calibri, Arial, sans-serif;
 }
 .drum-machine-container {
-	width: 800px;
+	width: 775px;
 	height: 166px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	margin-bottom: 8px;
+	box-shadow: 0px 0px 5px #ccc;
 }
 .drum-machine {
 	padding: 8px;
@@ -31,7 +32,7 @@ body {
 	clear: both;
 }
 .sample-row .label {
-	width: 60px;
+	width: 50px;
 	font-size: 19px;
 	float: left;
 	line-height: 50px;
@@ -44,15 +45,19 @@ body {
 	height: 30px;
 	margin: 8px 4px 8px 4px;
 	border: 2px solid #bbb;
-	border-radius: 5px;
+	border-radius: 8px;
 	float: left;
 	cursor: pointer;
+}
+.active {
+	background-color: #F26F63;
+	box-shadow: 0px 0px 5px #999;
 }
 #play {
 	width: 150px;
 	height: 50px;
 	color: white;
-	background-color: #999;
+	background-color: #777;
 	font-size: 30px;
 	text-align: center;
 	line-height: 50px;
@@ -124,8 +129,14 @@ body {
 	</div>
 	<div id="play">Play</div>
 <script>
-	$('#play').on('click', function() {
-		RhythmSample.play();
+	$(document).ready(function() {
+		$('.sample-box').on('click', function() {
+			$(this).toggleClass('active');
+		});
+		
+		$('#play').on('click', function() {
+			RhythmSample.play();
+		});
 	});
 </script>
 </body>
